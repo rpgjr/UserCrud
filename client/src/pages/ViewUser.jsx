@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ViewUser = () => {
+
 	return (
 		<>
 			<div className='flex justify-between items-center mb-2'>

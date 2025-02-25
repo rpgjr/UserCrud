@@ -15,9 +15,9 @@ const LayoutPage = () => {
 						<Routes>
 							<Route path='/' element={<Navbar />}>
 								<Route index element={<MainPage />} />
-                <Route path='/add' element={<AddUser />} />
-								<Route path='/view' element={<ViewUser />} />
-                <Route path='/update' element={<UpdateUser />} />
+                <Route path='add' element={<AddUser />} />
+								<Route path='view' element={<ViewUser />} />
+                <Route path='update' element={<UpdateUser />} />
 							</Route>
 						</Routes>
 					</BrowserRouter>
