@@ -35,50 +35,23 @@ const UserTable = () => {
 				</Link>
 			</div>
 			<div className='overflow-x-auto rounded-box border border-base-content/5 bg-base-100'>
-				<table className='table'>
+				<table className='table table-zebra'>
 					<thead>
-						<tr>
+						<tr className='bg-accent text-accent-content'>
 							<th>ID</th>
 							<th>Name</th>
 							<th>Username</th>
-							<th>Email</th>
 							<th>Type</th>
 							<th>Date Created</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th>1</th>
-							<td>Cy Ganderton</td>
-							<td>Quality Control Specialist</td>
-							<td>Blue</td>
-							<td>Blue</td>
-							<td>Blue</td>
-							<td className='flex gap-1'>
-								<Link to='/view' className='btn btn-info p-3'>
-									<Eye size={20} />
-								</Link>
-								<Link to='/update' className='btn btn-success p-3'>
-									<Pencil size={20} />
-								</Link>
-								<button
-									className='btn btn-error p-3'
-									onClick={() =>
-										document.getElementById('deletePrompt').showModal()
-									}
-								>
-									<Trash2 size={20} />
-								</button>
-								<DeletePromp />
-							</td>
-						</tr>
 						{users.map((user, index) => (
 							<tr key={user.id}>
 								<th>{index + 1}</th>
 								<td>{user.name}</td>
 								<td>{user.username}</td>
-								<td>{user.email}</td>
 								<td>{user.userType}</td>
 								<td>{formatDate(user.dateCreated)}</td>
 								<td className='flex gap-1'>
