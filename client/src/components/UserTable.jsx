@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const UserTable = () => {
 	const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState({});
 
 	const getUsers = async () => {
 		let endpoint = 'http://localhost:8080/user/all';
@@ -23,7 +24,12 @@ const UserTable = () => {
 
 	useEffect(() => {
 		getUsers();
-	}, []);
+	}, [users]);
+
+  const handleOnDelete = (user) => {
+    setSelectedUser(user);
+    document.getElementById('deletePrompt').showModal();
+  }
 
 	return (
 		<>
@@ -67,12 +73,12 @@ const UserTable = () => {
 									<button
 										className='btn btn-error p-3'
 										onClick={() =>
-											document.getElementById('deletePrompt').showModal()
+                      handleOnDelete(user)
 										}
 									>
 										<Trash2 size={20} />
 									</button>
-									<DeletePromp />
+									<DeletePromp user={selectedUser} />
 								</td>
 							</tr>
 						))}

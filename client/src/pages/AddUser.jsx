@@ -15,7 +15,7 @@ const AddUser = () => {
     dateCreated: null,
 	});
 
-	const handleChange = (e) => {
+  const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData((prevState) => ({ ...prevState, [name]: value }));
 	};
@@ -94,7 +94,7 @@ const AddUser = () => {
 							onChange={handleChange}
 							value={formData.userType}
 						>
-							<option disabled={true}>Pick a user type</option>
+							<option hidden>Pick a user type</option>
 							<option value='User'>User</option>
 							<option value='Super Admin'>Super Admin</option>
 							<option value='Temporary User'>Temporary User</option>
@@ -110,7 +110,7 @@ const AddUser = () => {
 							onChange={handleChange}
 							value={formData.position}
 						>
-							<option disabled={true}>Employee Title</option>
+							<option hidden>Employee Title</option>
 							<option value='Dev'>Dev</option>
 							<option value='QA'>QA</option>
 							<option value='Lead'>Lead</option>
